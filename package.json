@@ -1,4 +1,6 @@
 {
+  "version": "1.0.0",
+  "main": "server.js", 
   "dependencies": {
     "@stripe/stripe-js": "^4.2.0",
     "body-parser": "^1.20.2",
