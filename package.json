@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@stripe/stripe-js": "^4.2.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "stripe": "^16.7.0",
+    "telegraf": "^4.16.3"
+  }
+}

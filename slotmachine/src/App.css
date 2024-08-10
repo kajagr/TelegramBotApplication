@@ -1,0 +1,14 @@
+body {
+  background-color: #383838;
+  color: rgb(216, 216, 216);
+}
+
+.card__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
+}
