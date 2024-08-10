@@ -11,7 +11,7 @@ bot.catch((err, ctx) => {
 bot.start((ctx) =>
   ctx.reply("Welcome", {
     reply_markup: {
-      keyboard: [[{ text: "web app", web_app: web_link}]]
+      keyboard: [[{ text: "web app", web_app: {url: web_link}}]]
     },
   })
 )

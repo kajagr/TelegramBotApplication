@@ -13,33 +13,33 @@ function Cart({ cartItems = [], onCheckout }) {
     totalPrice += item.price * item.quantity
   })
 
-  // const makePayment = async () => {
-  //   const stripePromise = await loadStripe("pk_test_51PmCTtIfQEBOdjOkO2r6sOsjobm4pgiIlJYjGsXAS5scd1A35WNKUXVNorsI6Pgw5BpysnYarWbSmvkvmWO44sPE007T0Ut4YR")
+  const makePayment = async () => {
+    const stripe = await loadStripe("pk_test_51PmCTtIfQEBOdjOkO2r6sOsjobm4pgiIlJYjGsXAS5scd1A35WNKUXVNorsI6Pgw5BpysnYarWbSmvkvmWO44sPE007T0Ut4YR")
     
-  //   const body = {
-  //     products: cartItems
-  //   }
+    const body = {
+      products: cartItems
+    }
 
-  //   const headers = {
-  //     "Content-Type":"application/json"
-  //   }
+    const headers = {
+      "Content-Type":"application/json"
+    }
 
-  //   const response = await fetch(`${apiURL}/create-checkout-session`, {
-  //     method: 'POST',
-  //     headers: headers,
-  //     body: JSON.stringify(body)
-  //   })
+    const response = await fetch(`http://localhost:5001/create-checkout-session`, {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify(body)
+    })
 
-  //   const session = await response.json()
+    const session = await response.json()
 
-  //   const result = stripe.redirectToCheckout({
-  //     sessionId:session.id
-  //   })
+    const result = stripe.redirectToCheckout({
+      sessionId:session.id
+    })
 
-  //   if(result.error) {
-  //     console.log(result.error)
-  //   }
-  // }
+    if(result.error) {
+      console.log(result.error)
+    }
+  }
 
 
   return (
@@ -52,7 +52,7 @@ function Cart({ cartItems = [], onCheckout }) {
         title={`${cartItems.length === 0 ? "Order !" : "Checkout"}`}
         type="checkout"
         disable={cartItems.length === 0 ? true : false}
-        // onClick={makePayment}
+        onClick={makePayment}
       />
     </div>
   );
