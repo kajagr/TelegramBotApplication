@@ -24,7 +24,7 @@ function Cart({ cartItems = [], onCheckout }) {
       "Content-Type":"application/json"
     }
 
-    const response = await fetch(`https://wannabeslotmachine.herokuapp.com`, {
+    const response = await fetch(`http://localhost:5001/create-checkout-session`, {
       method: 'POST',
       headers: headers,
       body: JSON.stringify(body)

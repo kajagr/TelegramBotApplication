@@ -42,12 +42,6 @@ function App() {
     }
   }
 
-  const onCheckout = () => {
-    telegram.MainButton.text = "Pay"
-    telegram.MainButton.show()
-  }
-  
-
   return (
     <>
       <h1 className='heading'>
@@ -58,7 +52,7 @@ function App() {
           return <Card ticket={ticket} id={ticket.id} onAdd={onAdd} onRemove={onRemove}/>
         })}
       </div> 
-      <Cart cartItems={cartItems} onCheckout={onCheckout}>
+      <Cart cartItems={cartItems} >
       </Cart>
     </>
   );
