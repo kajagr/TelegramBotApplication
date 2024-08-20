@@ -1,6 +1,5 @@
-import React, {useState} from "react"
+import React from "react"
 import { loadStripe } from "@stripe/stripe-js"
-import { Elements, useStripe, useElements, CardElement } from "@stripe/react-stripe-js"
 import "./Cart.css"
 import Button from "../Button/Button"
 
@@ -55,7 +54,7 @@ function Cart({ cartItems = [], onCheckout }) {
         onClick={makePayment}
       />
     </div>
-  );
+  )
 }
 
 export default Cart

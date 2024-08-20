@@ -30,9 +30,9 @@ function App() {
   }
   
   const onRemove = (ticket) => {
-    const exists = cartItems.find((x) => x.price === ticket.price);
+    const exists = cartItems.find((x) => x.price === ticket.price)
     if (exists.quantity === 1) {
-      setCartItems(cartItems.filter((x) => x.price !== ticket.price));
+      setCartItems(cartItems.filter((x) => x.price !== ticket.price))
     } else {
       setCartItems(
         cartItems.map((x) =>
